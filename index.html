@@ -1,79 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restaurant Table Booking</title>
     <link rel="stylesheet" href="output.css" />
     <link rel="stylesheet" href="style.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="wrapper">
-        <div class="min-h-screen flex flex-col justify-center items-center bg-slate-300">
-            <h1 class="mb-4 text-3xl font-bold uppercase">
-                Table Reservation System
-            </h1>
-            <div id="screen1" class="screen">
-                <a href=""
-                    class="bg-slate-500 hover:bg-slate-800 shadow-md hover:shadow-none text-white px-8 py-2 rounded font-bold uppercase inline-block mt-8 ">Book
-                    Now</a>
-            </div>
-            <div id="screen2" class="screen bg-white px-10 py-7 shadow-md rounded-md hidden ">
-                <h1 class="font-bold ">Book a Table</h1>
-                <h3 class="mt-4 ">User Details</h3>
-                <form action="" class="flex flex-col m-4">
-                    <div class="flex items-center justify-center bg-blue-300 m-2">
-                    <label for="" class="mx-5 my-4">People</label>
-                    <input type="text" name="People"  id="peoplecount" placeholder="Enter People" class="border-solid rounded-md border-slate-950 border-2 mx-10" >
-                </div>
-                <div class="flex items-center justify-center bg-blue-300 m-2 ">
-                    <label for="" class="mx-6 my-4">Date</label>
-                    <input type="date" name="Date" id="date" class="border-solid rounded-md border-slate-950 border-2 mx-16" >
-                </div>
-                <div class="flex items-center justify-center bg-blue-300 m-2">
-                    <label for="" class="mx-0 my-4">Time</label>
-                    <input type="time" name="Time" id="time" class="border-solid rounded-md border-slate-950 border-2 mx-20">
-                </div>
-                    <button class="button bg-blue-600 m-6 px-2  py-2 rounded-md text-white">Book Now</button>
-                </form>
-            </div>
-
-
-
-            <div id="screen3" class="screen bg-white p-4 shadow-md rounded-md hidden ">
-                <h1 class="font-bold ">Book a Table</h1>
-                <div class="flex flex-wrap w-[50%] m-4"> 
-                    <button class="bg-slate-500 px-4 py-2 m-4">1</button>
-                    <button class="bg-slate-500 px-4 py-2 m-4">2</button>
-                    <button class="bg-slate-500 px-4 py-2 m-4">3</button>
-                    <button class="bg-slate-500 px-4 py-2 m-4">4</button>
-                    <button class="bg-slate-500 px-4 py-2 m-4">5</button>
-                    <button class="bg-slate-500 px-4 py-2 m-4">6</button>
-                    <button class="bg-slate-500 px-4 py-2 m-4">7</button>
-                    <button class="bg-slate-500 px-4 py-2 m-4">8</button>
-                    <button class="bg-slate-500 px-4 py-2 m-4">9</button>
-                    <button class="bg-slate-500 px-4 py-2 m-4">10</button>
-                </div>
-                    <button class="button bg-blue-600 m-6 px-2  py-2 rounded-md text-white">Book Now</button>
-                
-            </div>
-            <div id="screen4" class="screen bg-white p-8 shadow-md rounded-md hidden">
-<div class="bg-blue-300 p-4">
-    <label for="" >Name</label>
-    <input type="text" placeholder="Your Name" class="border-solid rounded-md border-slate-950 border-2">
-</div>
-<div class="bg-blue-300 p-4">
-    <label for="" >Phone Number</label>
-    <input type="number" placeholder="Number">
-</div>
-<button class="bg-blue-600 m-6 px-2  py-2 rounded-md text-white">Confirm Reservation</button>
-            </div>
+      <div
+        class="min-h-screen flex flex-col justify-center items-center bg-slate-300"
+      >
+        <h1 class="mb-4 text-3xl font-bold uppercase">
+          Table Reservation System
+        </h1>
+        <div id="screen1" class="screen">
+          <a
+            href=""
+            class="bg-slate-500 hover:bg-slate-800 shadow-md hover:shadow-none text-white px-8 py-2 rounded font-bold uppercase inline-block mt-8"
+            >Book Now</a
+          >
         </div>
+        <div
+          id="screen2"
+          class="screen bg-white px-10 py-7 shadow-md rounded-md hidden"
+        >
+          <h1 class="font-bold">Book a Table</h1>
+          <h3 class="mt-4">User Details</h3>
+          <form method="post" action="" class="flex flex-col m-4">
+            <div class="flex items-center justify-center bg-blue-300 m-2">
+              <label for="" class="mx-5 my-4">People</label>
+              <input
+                type="text"
+                name="people"
+                id="peoplecount"
+                placeholder="Enter People"
+                class="border-solid rounded-md border-slate-950 border-2 mx-10"
+              />
+            </div>
+            <div
+              id="DaTe"
+              class="flex items-center justify-center bg-blue-300 m-2"
+            >
+              <label for="" class="mx-6 my-4">Date</label>
+              <input
+                type="date"
+                name="date"
+                id="date"
+                class="border-solid rounded-md border-slate-950 border-2 mx-16"
+              />
+            </div>
+            <div class="flex items-center justify-center bg-blue-300 m-2">
+              <label for="" class="mx-0 my-4">Time</label>
+              <!-- <input
+                type="time"
+                name="Time"
+                id="time"
+                class="border-solid rounded-md border-slate-950 border-2 mx-20"
+              /> -->
+
+              <select
+                name="time"
+                id="time"
+                class="border-solid rounded-md border-slate-950 border-2 mx-20"
+              >
+                <!-- OPTIONS WILL BE POPULATED VIA JS -->
+              </select>
+            </div>
+            <button
+              id="bookButton"
+              class="button bg-blue-600 m-6 px-2 py-2 rounded-md text-white"
+              type="submit"
+            >
+              Book Now
+            </button>
+          </form>
+        </div>
+
+        <div
+          id="screen3"
+          class="screen bg-white p-4 shadow-md rounded-md hidden"
+        >
+          <h1 class="font-bold">Book a Table</h1>
+
+          <div
+            id="peopleCount"
+            class="my-4 p-2 rounded flex items-center gap-4 bg-blue-300"
+          >
+            <em>People</em>
+            <p class="text-xl"></p>
+          </div>
+
+          <div id="tableBooking" class="flex flex-wrap w-[50%] m-4">
+            <button
+              data-table-id="1"
+              class="border-blue-500 border-2 rounded color-white px-4 py-2 m-4"
+            >
+              1
+            </button>
+            <button
+              data-table-id="2"
+              class="border-blue-500 border-2 rounded color-white px-4 py-2 m-4"
+            >
+              2
+            </button>
+            <button
+              data-table-id="3"
+              class="border-blue-500 border-2 rounded color-white px-4 py-2 m-4"
+            >
+              3
+            </button>
+            <button
+              data-table-id="4"
+              class="border-blue-500 border-2 rounded color-white px-4 py-2 m-4"
+            >
+              4
+            </button>
+            <button
+              data-table-id="5"
+              class="border-blue-500 border-2 rounded color-white px-4 py-2 m-4"
+            >
+              5
+            </button>
+            <button
+              data-table-id="6"
+              class="border-blue-500 border-2 rounded color-white px-4 py-2 m-4"
+            >
+              6
+            </button>
+            <button
+              data-table-id="7"
+              class="border-blue-500 border-2 rounded color-white px-4 py-2 m-4"
+            >
+              7
+            </button>
+            <button
+              data-table-id="8"
+              class="border-blue-500 border-2 rounded color-white px-4 py-2 m-4"
+            >
+              8
+            </button>
+            <button
+              data-table-id="9"
+              class="border-blue-500 border-2 rounded color-white px-4 py-2 m-4"
+            >
+              9
+            </button>
+            <button
+              data-table-id="10"
+              class="border-blue-500 border-2 rounded color-white px-4 py-2 m-4"
+            >
+              10
+            </button>
+          </div>
+          <button
+            class="button bg-blue-600 m-6 px-2 py-2 rounded-md text-white"
+            id="bookNow"
+          >
+            Book Now
+          </button>
+        </div>
+        <div
+          id="screen4"
+          class="screen bg-white p-8 shadow-md rounded-md hidden"
+        >
+          <div class="bg-blue-300 p-4">
+            <label for="">Name</label>
+            <input
+              type="text"
+              placeholder="Your Name"
+              class="border-solid rounded-md border-slate-950 border-2"
+            />
+          </div>
+          <div class="bg-blue-300 p-4">
+            <label for="">Phone Number</label>
+            <input type="number" placeholder="Number" />
+          </div>
+          <button class="bg-blue-600 m-6 px-2 py-2 rounded-md text-white">
+            Confirm Reservation
+          </button>
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
