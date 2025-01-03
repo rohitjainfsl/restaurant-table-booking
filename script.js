@@ -2,13 +2,16 @@ const screen1 = document.querySelector("#screen1");
 const screen2 = document.querySelector("#screen2");
 const screen3 = document.querySelector("#screen3");
 const screen4 = document.querySelector("#screen4");
+const screen5 = document.querySelector("#screen5");
 const startBtn = document.querySelector("#screen1 a");
 const screen2Time = document.querySelector("#screen2 select");
 const screen2date = document.querySelector("#screen2 #DaTe input");
 const bookingForm = document.querySelector("#screen2 form");
 const tables = document.querySelectorAll("#tableBooking button");
-const peopleCount = document.querySelector("#peopleCount p");
 const screen3BookNow = screen3.querySelector("#bookNow");
+const peopleCount = document.querySelector("#screen3 .well p");
+const contactWell = document.querySelector("#screen4 .well p");
+const contactForm = document.querySelector("#screen4 form");
 
 const bookings =
   localStorage.getItem("bookings") === null
@@ -59,13 +62,51 @@ tables.forEach((table) => {
   });
 });
 
+screen3BookNow.addEventListener("click", () => {
+  showScreen(screen3, screen4);
+  contactWell.innerHTML = `You are making a reservation for <strong>${currentBooking.people}</strong> people, on <strong>${currentBooking.date}</strong> at <strong>${currentBooking.time}</strong>`;
+});
+
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const formData = new FormData(contactForm);
+  const contactData = Object.fromEntries(formData);
+  currentBooking = {
+    ...currentBooking,
+    name: contactData.name,
+    number: contactData.number,
+  };
+
+  bookings.pop();
+  bookings.push(currentBooking);
+  localStorage.setItem("bookings", JSON.stringify(bookings));
+
+  showScreen(screen4, screen5);
+});
+
 function removeActive() {
   tables.forEach((table) =>
     table.classList.remove("bg-blue-500", "text-white")
   );
 }
 
-function disableBookedTables(bookedTables) {}
+function disableTable(table) {
+  table.disabled = true;
+  table.classList.add("opacity-50", "bg-blue-500");
+}
+
+function enableTable(table) {
+  table.disabled = false;
+  table.classList.remove("opacity-50", "bg-blue-500");
+}
+
+function disableBookedTables(bookedTables) {
+  tables.forEach((table) =>
+    bookedTables.includes(table.getAttribute("data-table-id"))
+      ? disableTable(table)
+      : enableTable(table)
+  );
+}
 
 function initializeBooking() {
   const formData = new FormData(bookingForm);

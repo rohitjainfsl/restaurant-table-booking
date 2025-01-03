@@ -86,8 +86,7 @@
           <h1 class="font-bold">Book a Table</h1>
 
           <div
-            id="peopleCount"
-            class="my-4 p-2 rounded flex items-center gap-4 bg-blue-300"
+            class="well my-4 p-2 rounded flex items-center gap-4 bg-blue-300"
           >
             <em>People</em>
             <p class="text-xl"></p>
@@ -162,25 +161,45 @@
             Book Now
           </button>
         </div>
+
         <div
           id="screen4"
           class="screen bg-white p-8 shadow-md rounded-md hidden"
         >
-          <div class="bg-blue-300 p-4">
-            <label for="">Name</label>
-            <input
-              type="text"
-              placeholder="Your Name"
-              class="border-solid rounded-md border-slate-950 border-2"
-            />
+          <div
+            class="well my-4 p-2 rounded flex items-center gap-4 bg-blue-300"
+            class="my-4 p-2 rounded flex items-center gap-4 bg-blue-300"
+          >
+            <p class="text-xl"></p>
           </div>
-          <div class="bg-blue-300 p-4">
-            <label for="">Phone Number</label>
-            <input type="number" placeholder="Number" />
-          </div>
-          <button class="bg-blue-600 m-6 px-2 py-2 rounded-md text-white">
-            Confirm Reservation
-          </button>
+          <form action="">
+            <div class="bg-blue-300 p-4">
+              <label for="">Name</label>
+              <input
+                type="text"
+                placeholder="Your Name"
+                name="name"
+                class="border-solid rounded-md border-slate-950 border-2"
+              />
+            </div>
+            <div class="bg-blue-300 p-4">
+              <label for="">Phone Number</label>
+              <input type="number" name="number" placeholder="Number" />
+            </div>
+            <button
+              type="submit"
+              class="bg-blue-600 m-6 px-2 py-2 rounded-md text-white"
+            >
+              Confirm Reservation
+            </button>
+          </form>
+        </div>
+
+        <div
+          id="screen5"
+          class="screen bg-white p-8 shadow-md rounded-md hidden"
+        >
+          <h2>Thank you! Your Registration is confirmed</h2>
         </div>
       </div>
     </div>
