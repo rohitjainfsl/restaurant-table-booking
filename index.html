@@ -13,47 +13,51 @@
       <div
         class="min-h-screen flex flex-col justify-center items-center bg-slate-300"
       >
-        <h1 class="mb-4 text-3xl font-bold uppercase">
+        <h1 class="mb-4 text-5xl font-bold uppercase">
           Table Reservation System
         </h1>
         <div id="screen1" class="screen">
           <a
             href=""
-            class="bg-slate-500 hover:bg-slate-800 shadow-md hover:shadow-none text-white px-8 py-2 rounded font-bold uppercase inline-block mt-8"
+            class="bg-slate-500 hover:bg-slate-800 shadow-md hover:shadow-none text-white px-12 py-4 text-xl rounded font-bold uppercase inline-block mt-8"
             >Book Now</a
           >
         </div>
         <div
           id="screen2"
-          class="screen bg-white px-10 py-7 shadow-md rounded-md hidden"
+          class="screen bg-white px-6 py-7 shadow-md rounded-md hidden"
         >
           <h1 class="font-bold">Book a Table</h1>
           <h3 class="mt-4">User Details</h3>
-          <form method="post" action="" class="flex flex-col m-4">
-            <div class="flex items-center justify-center bg-blue-300 m-2">
-              <label for="" class="mx-5 my-4">People</label>
+          <form method="post" action="" class="flex flex-col my-4">
+            <div
+              class="flex items-center justify-between bg-blue-300 my-2 px-2"
+            >
+              <label for="" class="mx-5 my-4 w-1/5">People</label>
               <input
                 type="text"
                 name="people"
                 id="peoplecount"
                 placeholder="Enter People"
-                class="border-solid rounded-md border-slate-950 border-2 mx-10"
+                class="border-solid rounded-md border-slate-400 border-2 px-2 py-2 w-4/5"
               />
             </div>
             <div
               id="DaTe"
-              class="flex items-center justify-center bg-blue-300 m-2"
+              class="flex items-center justify-between bg-blue-300 my-2 px-2"
             >
-              <label for="" class="mx-6 my-4">Date</label>
+              <label for="" class="mx-5 my-4 w-1/5">Date</label>
               <input
                 type="date"
                 name="date"
                 id="date"
-                class="border-solid rounded-md border-slate-950 border-2 mx-16"
+                class="border-solid rounded-md border-slate-400 border-2 px-2 py-2 w-4/5"
               />
             </div>
-            <div class="flex items-center justify-center bg-blue-300 m-2">
-              <label for="" class="mx-0 my-4">Time</label>
+            <div
+              class="flex items-center justify-between bg-blue-300 my-2 px-2"
+            >
+              <label for="" class="mx-5 my-4 w-1/5">Time</label>
               <!-- <input
                 type="time"
                 name="Time"
@@ -64,14 +68,14 @@
               <select
                 name="time"
                 id="time"
-                class="border-solid rounded-md border-slate-950 border-2 mx-20"
+                class="border-solid rounded-md border-slate-400 border-2 px-2 py-2 w-4/5"
               >
                 <!-- OPTIONS WILL BE POPULATED VIA JS -->
               </select>
             </div>
             <button
               id="bookButton"
-              class="button bg-blue-600 m-6 px-2 py-2 rounded-md text-white"
+              class="button bg-blue-600 my-6 px-2 py-2 rounded-md text-white"
               type="submit"
             >
               Book Now
@@ -164,7 +168,7 @@
 
         <div
           id="screen4"
-          class="screen bg-white p-8 shadow-md rounded-md hidden"
+          class="screen bg-white px-6 py-8 shadow-md rounded-md hidden"
         >
           <div
             class="well my-4 p-2 rounded flex items-center gap-4 bg-blue-300"
@@ -173,22 +177,27 @@
             <p class="text-xl"></p>
           </div>
           <form action="">
-            <div class="bg-blue-300 p-4">
-              <label for="">Name</label>
+            <div class="bg-blue-300 p-4 flex justify-between">
+              <label for="" class="inline-block w-1/4">Name</label>
               <input
                 type="text"
                 placeholder="Your Name"
                 name="name"
-                class="border-solid rounded-md border-slate-950 border-2"
+                class="border-solid rounded-md border-slate-400 border-2 px-2 py-2 w-3/4"
               />
             </div>
-            <div class="bg-blue-300 p-4">
-              <label for="">Phone Number</label>
-              <input type="number" name="number" placeholder="Number" />
+            <div class="bg-blue-300 p-4 flex justify-between">
+              <label for="" class="inline-block w-1/4">Phone Number</label>
+              <input
+                type="number"
+                name="number"
+                placeholder="Number"
+                class="border-solid rounded-md border-slate-400 border-2 px-2 py-2 w-3/4"
+              />
             </div>
             <button
               type="submit"
-              class="bg-blue-600 m-6 px-2 py-2 rounded-md text-white"
+              class="bg-blue-600 my-6 px-2 py-2 rounded-md text-white"
             >
               Confirm Reservation
             </button>
